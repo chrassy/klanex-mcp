@@ -1,0 +1,42 @@
+{
+  "name": "klanex-mcp",
+  "version": "0.1.0",
+  "mcpName": "io.github.chrassy/klanex",
+  "description": "MCP server for klanex — reliable asynchronous execution for agent tool calls (schema gating, retries, circuit breakers, audit trail). Thin stdio proxy to the hosted klanex MCP endpoint.",
+  "type": "module",
+  "bin": {
+    "klanex-mcp": "bin/klanex-mcp.js"
+  },
+  "files": [
+    "bin"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node test/smoke.mjs"
+  },
+  "license": "MIT",
+  "author": "klanex (https://klanexai.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrassy/klanex-mcp.git"
+  },
+  "homepage": "https://klanexai.com",
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "modelcontextprotocol",
+    "agents",
+    "ai-agents",
+    "tool-calling",
+    "reliability",
+    "retries",
+    "idempotency",
+    "webhooks",
+    "klanex"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0"
+  }
+}

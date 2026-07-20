@@ -1,0 +1,45 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.chrassy/klanex",
+  "title": "klanex",
+  "description": "Reliable async execution for agent tool calls: schema-gate payloads, absorb rate limits and outages with retries and circuit breakers, idempotency, human approval gates, encrypted credentials, replay, and audit trail.",
+  "repository": {
+    "url": "https://github.com/chrassy/klanex-mcp",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "websiteUrl": "https://klanexai.com",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.klanexai.com/mcp",
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "description": "klanex API key (klx_live_... for production; free klx_test_... sandbox keys work at https://api.sandbox.klanexai.com/mcp)",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ],
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "klanex-mcp",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "KLANEX_API_KEY",
+          "description": "klanex API key; klx_test_... keys route to the sandbox automatically",
+          "isRequired": true,
+          "format": "string",
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}

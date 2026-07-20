@@ -1,0 +1,16 @@
+# Smithery configuration — https://smithery.ai/docs
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    required: [apiKey]
+    properties:
+      apiKey:
+        type: string
+        description: klanex API key (klx_live_... or free sandbox klx_test_...)
+  commandFunction: |-
+    (config) => ({
+      command: "node",
+      args: ["bin/klanex-mcp.js"],
+      env: { KLANEX_API_KEY: config.apiKey }
+    })
