@@ -1,16 +1,22 @@
-# Smithery configuration — https://smithery.ai/docs
+# Smithery configuration — https://smithery.ai/docs/config#smitheryyaml
+# Runs the published npm package over stdio; the package proxies to the
+# hosted klanex MCP endpoint (sandbox for klx_test_ keys, production otherwise).
 startCommand:
   type: stdio
   configSchema:
     type: object
-    required: [apiKey]
+    required:
+      - apiKey
     properties:
       apiKey:
         type: string
-        description: klanex API key (klx_live_... or free sandbox klx_test_...)
-  commandFunction: |-
+        description: klanex API key — klx_live_... for production, or a free klx_test_... sandbox key
+  commandFunction:
+    |-
     (config) => ({
-      command: "node",
-      args: ["bin/klanex-mcp.js"],
+      command: "npx",
+      args: ["-y", "klanex-mcp"],
       env: { KLANEX_API_KEY: config.apiKey }
     })
+  exampleConfig:
+    apiKey: klx_test_example
