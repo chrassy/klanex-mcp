@@ -1,6 +1,7 @@
 # klanex MCP server
 
 [![npm](https://img.shields.io/npm/v/klanex-mcp)](https://www.npmjs.com/package/klanex-mcp)
+[![MCP Marketplace](https://img.shields.io/badge/MCP%20Marketplace-Indexed-blueviolet)](https://getlulu.dev/mcps)
 
 Reliable execution for agent tool calls, as an [MCP](https://modelcontextprotocol.io) server.
 
